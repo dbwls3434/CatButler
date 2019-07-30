@@ -1,0 +1,544 @@
+@import 'config';
+@import 'utilities';
+@import 'form';
+
+* {
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+textarea,
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+// Navbar
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  border-bottom: solid 1px $primary-color;
+  opacity: 0.9;
+
+  .nav-items {
+    display: flex;
+    margin: 8px 0 0 0;
+  }
+
+  a {
+    color: #fff;
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  display: block;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  opacity: 0.9;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+
+  a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #ccc;
+    display: block;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 22px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+}
+
+// Landing
+.landing {
+  position: relative;
+  background: url('../../img/showcase.jpg') no-repeat center center/cover;
+  height: 100vh;
+
+  &-inner {
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.guide {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+
+  &-box {
+    width: 350px;
+    margin: 1rem;
+  }
+}
+
+.footer {
+  position: relative;
+  height: 3rem;
+  background-color: $dark-color;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Social Login
+.sociallogin {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  &-item {
+    width: 400x;
+    padding: 1rem;
+  }
+
+  &-btn {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+  }
+}
+
+// About Page
+.about {
+  &-image {
+    background: url('../../img/me.jpg') no-repeat center center/cover;
+    width: 350px;
+    height: 300px;
+    float: left;
+    margin: 1rem;
+  }
+
+  &-inner {
+    display: block;
+    margin: 1rem;
+  }
+}
+
+// Board Page
+.board {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  .board-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.75rem;
+
+    th,
+    td {
+      border: 1px solid $graysh-color;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background: $light-color;
+      text-align: center;
+    }
+  }
+
+  .board-action {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+// Paging
+.pagination {
+  display: flex;
+  align-items: row;
+  justify-content: center;
+
+  .page {
+    //margin-top: 1.5rem;
+    //margin-bottom: 1.5rem;
+
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+
+    .page-item {
+      //margin: 0 0.5rem;1
+
+      .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        border: 1px solid $graysh-color;
+
+        &-selected {
+          background-color: $graysh-color;
+        }
+      }
+    }
+  }
+}
+
+// PostShow
+.postshow-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &-item {
+    text-align: center;
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 3px 3px 3px 3px gray;
+  }
+}
+
+.postshow-btn-group {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.postshow-btn-item {
+  width: 100%;
+  text-align: center;
+}
+
+.postshow-detail {
+  display: block;
+  width: 100%;
+}
+
+.postshow2-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &-item {
+    text-align: center;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 3px 3px 3px 3px gray;
+  }
+}
+
+.postshow2-btn-group {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.postshow2-btn-item {
+  width: 100%;
+  text-align: center;
+}
+
+.postshow2-detail {
+  display: block;
+  width: 100%;
+}
+
+// File Upload
+// .form-fileupload {
+//   display: flex;
+//   flex-direction: row;
+// }
+
+.fileContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.fileContainer [type='file'] {
+  cursor: inherit;
+  display: block;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+}
+
+.file-group {
+  position: relative;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &-item {
+    text-align: center;
+    width: 170px;
+    height: 300px;
+    overflow: hidden;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 3px 3px 3px 3px gray;
+
+    &-img {
+      max-height: 175px;
+    }
+  }
+}
+
+// Maps
+.maps-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+
+  .map-google {
+    display: block;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+// Progress bar
+.progress {
+  display: flex;
+  flex-direction: column;
+
+  .progress-bar {
+    background: #dee2e3;
+    border-radius: 99px;
+    width: 100%;
+    height: 5px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      border-radius: 99px;
+      position: absolute;
+      height: 5px;
+      background: #1e9ef6;
+      content: '';
+      width: 0;
+      transition: width 0.2s;
+    }
+  }
+
+  $start: 1;
+  $end: 100;
+
+  @for $i from $start through $end {
+    $i: 1 * $i;
+    .progress-bar-#{$i}::before {
+      width: $i * 1%;
+    }
+  }
+}
+
+// Spinner
+.spinner {
+  position: relative;
+  height: 80vh;
+
+  &-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+// // Profiles Page
+// .profile {
+//   display: grid;
+//   grid-template-columns: 2fr 4fr 2fr;
+//   grid-gap: 2rem;
+//   align-items: center;
+//   padding: 1rem;
+//   line-height: 1.8;
+//   margin-bottom: 1rem;
+// }
+
+// // Profile Page
+// .profile-grid {
+//   display: grid;
+//   grid-template-areas: 'top top' 'about about' 'exp edu' 'github github';
+//   grid-gap: 1rem;
+
+//   .profile-top {
+//     grid-area: top;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+
+//     img {
+//       width: 250px;
+//     }
+
+//     .icons a {
+//       color: #fff;
+//       margin: 0 0.3rem;
+
+//       &:hover {
+//         color: $dark-color;
+//       }
+//     }
+//   }
+
+//   .profile-about {
+//     grid-area: about;
+//     text-align: center;
+
+//     .skills {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       text-align: center;
+//     }
+//   }
+
+//   .profile-exp {
+//     grid-area: exp;
+//   }
+
+//   .profile-edu {
+//     grid-area: edu;
+//   }
+
+//   .profile-exp,
+//   .profile-edu {
+//     & > div {
+//       margin-bottom: 1rem;
+//       padding-bottom: 1rem;
+//       border-bottom: #ccc 1px dotted;
+//     }
+
+//     &:last-child {
+//       border: none;
+//     }
+
+//     p {
+//       margin: 0.5rem 0;
+//     }
+//   }
+
+//   .profile-github {
+//     grid-area: github;
+
+//     .repo {
+//       display: flex;
+
+//       & > div:first-child {
+//         flex: 7;
+//         flex-basis: 70%;
+//       }
+
+//       & > div:last-child {
+//         flex: 3;
+//         flex-basis: 20%;
+//       }
+//     }
+//   }
+// }
+
+// // Posts Page
+// .post-form-header {
+//   padding: 0.5rem;
+// }
+
+// .post {
+//   display: grid;
+//   grid-template-columns: 1fr 4fr;
+//   grid-gap: 2rem;
+//   align-items: center;
+
+//   & > div:first-child {
+//     text-align: center;
+//   }
+
+//   img {
+//     width: 150px;
+//   }
+// }
+
+@import 'mobile';
