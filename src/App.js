@@ -15,7 +15,7 @@ import axios from 'axios';
 axios.defaults.baseURL =
   process.env.NODE_ENV !== 'production'
     ? 'http://localhost:5000'
-    : 'http://ec2-13-124-75-190.ap-northeast-2.compute.amazonaws.com:5000';
+    : 'http://www.catbutler.net:5000';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
