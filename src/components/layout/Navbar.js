@@ -70,9 +70,9 @@ const Navbar = ({ logout, auth: { isAuthenticated, loading, user } }) => {
         <Link to='/about' onClick={e => closeSlideMenu(e)}>
           한국어인사
         </Link>
-        <Link to='/socallogin' onClick={e => closeSlideMenu(e)}>
+        {/* <Link to='/socallogin' onClick={e => closeSlideMenu(e)}>
           SocialLogin
-        </Link>
+        </Link> */}
         <Link to='/board' onClick={e => closeSlideMenu(e)}>
           Board
         </Link>
@@ -85,9 +85,9 @@ const Navbar = ({ logout, auth: { isAuthenticated, loading, user } }) => {
         <Link to='/fileupload' onClick={e => closeSlideMenu(e)}>
           ImageUpload
         </Link>
-        <Link to='/googlemap' onClick={e => closeSlideMenu(e)}>
+        {/* <Link to='/googlemap' onClick={e => closeSlideMenu(e)}>
           GoogleMap
-        </Link>
+        </Link> */}
       </div>
     </Fragment>
   );

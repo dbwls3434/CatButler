@@ -43,8 +43,8 @@ module.exports = {
     ]
   },
   devServer: {
-    historyApiFallback: true,
-    http2: true
+    historyApiFallback: true
+    //http2: true
   },
   optimization: {
     minimizer: [
