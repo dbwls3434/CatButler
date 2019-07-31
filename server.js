@@ -1,5 +1,5 @@
-const https = require('https');
-const fs = require('fs');
+// const https = require('https');
+// const fs = require('fs');
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
@@ -30,14 +30,14 @@ app.use(express.static('uploads'));
 
 const PORT = process.env.PORT || 5000;
 
-https
-  .createServer(
-    {
-      key: fs.readFileSync('server.key'),
-      cert: fs.readFileSync('server.cert'),
-      requestCert: false,
-      rejectUnauthorized: false
-    },
-    app
-  )
+// https
+//   .createServer(
+//     {
+//       key: fs.readFileSync('server.key'),
+//       cert: fs.readFileSync('server.cert'),
+//       requestCert: false,
+//       rejectUnauthorized: false
+//     },
+app
+  // )
   .listen(PORT, () => console.log(`Server started on port ${PORT}`));
